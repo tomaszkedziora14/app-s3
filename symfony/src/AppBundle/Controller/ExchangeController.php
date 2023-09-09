@@ -70,7 +70,7 @@ class ExchangeController extends Controller
         }
 
         if (!in_array($sortBy, ['createdAt', 'firstIn', 'secondIn', 'firstOut', 'secondOut'])) {
-            return new Response('Invalid sort_by. The available values ​​are "createdAt", "firstIn", "secondIn", "firstOut" lub "secondOut".', 400);
+            return new Response('Invalid sort_by. The available values ​​are "createdAt", "firstIn", "secondIn", "firstOut" or "secondOut".', 400);
         }
 
         if ($page < 1) {
