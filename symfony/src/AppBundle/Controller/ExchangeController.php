@@ -61,10 +61,10 @@ class ExchangeController extends Controller
         $entityManager = $this->getDoctrine()->getManager();
         $historyRepository = $entityManager->getRepository(History::class);
 
-        $page = $request->query->getInt('page', 1);
-        $limit = $request->query->getInt('limit', 10);
-        $sortBy = $request->query->get('sort_by', 'createdAt');
-        $sortOrder = $request->query->get('sort_order', 'desc');
+        $page = $request->query->getInt('page');
+        $limit = $request->query->getInt('limit');
+        $sortBy = $request->query->get('sort_by');
+        $sortOrder = $request->query->get('sort_order');
 
         if (!in_array($sortOrder, ['asc', 'desc'])) {
             return new Response('Invalid sort_order. The available values ​​are "asc" lub "desc".', 400);
